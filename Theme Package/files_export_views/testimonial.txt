@@ -1,0 +1,234 @@
+$view = new view();
+$view->name = 'testimonial';
+$view->description = '';
+$view->tag = 'default';
+$view->base_table = 'node';
+$view->human_name = 'Testimonial';
+$view->core = 7;
+$view->api_version = '3.0';
+$view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+/* Display: Master */
+$handler = $view->new_display('default', 'Master', 'default');
+$handler->display->display_options['title'] = 'Testimonial';
+$handler->display->display_options['use_more_always'] = FALSE;
+$handler->display->display_options['access']['type'] = 'perm';
+$handler->display->display_options['cache']['type'] = 'none';
+$handler->display->display_options['query']['type'] = 'views_query';
+$handler->display->display_options['exposed_form']['type'] = 'basic';
+$handler->display->display_options['pager']['type'] = 'some';
+$handler->display->display_options['pager']['options']['items_per_page'] = '3';
+$handler->display->display_options['style_plugin'] = 'owl_carousel';
+$handler->display->display_options['style_options']['default_row_class'] = FALSE;
+$handler->display->display_options['style_options']['row_class_special'] = FALSE;
+$handler->display->display_options['style_options']['wrapper_class'] = 'testiomials_carousel';
+$handler->display->display_options['style_options']['items'] = '5';
+$handler->display->display_options['style_options']['transitionStyle'] = 'fadeUp';
+$handler->display->display_options['style_options']['autoHeight'] = '0';
+$handler->display->display_options['style_options']['singleItem'] = '0';
+$handler->display->display_options['style_options']['pagination'] = '1';
+$handler->display->display_options['style_options']['navigation'] = '0';
+$handler->display->display_options['row_plugin'] = 'fields';
+$handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+/* Field: Content: Title */
+$handler->display->display_options['fields']['title']['id'] = 'title';
+$handler->display->display_options['fields']['title']['table'] = 'node';
+$handler->display->display_options['fields']['title']['field'] = 'title';
+$handler->display->display_options['fields']['title']['label'] = '';
+$handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+$handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+/* Sort criterion: Content: Post date */
+$handler->display->display_options['sorts']['created']['id'] = 'created';
+$handler->display->display_options['sorts']['created']['table'] = 'node';
+$handler->display->display_options['sorts']['created']['field'] = 'created';
+$handler->display->display_options['sorts']['created']['order'] = 'DESC';
+/* Filter criterion: Content: Published */
+$handler->display->display_options['filters']['status']['id'] = 'status';
+$handler->display->display_options['filters']['status']['table'] = 'node';
+$handler->display->display_options['filters']['status']['field'] = 'status';
+$handler->display->display_options['filters']['status']['value'] = 1;
+$handler->display->display_options['filters']['status']['group'] = 1;
+$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+/* Filter criterion: Content: Type */
+$handler->display->display_options['filters']['type']['id'] = 'type';
+$handler->display->display_options['filters']['type']['table'] = 'node';
+$handler->display->display_options['filters']['type']['field'] = 'type';
+$handler->display->display_options['filters']['type']['value'] = array(
+  'testimonial' => 'testimonial',
+);
+
+/* Display: Block */
+$handler = $view->new_display('block', 'Block', 'block');
+$handler->display->display_options['defaults']['header'] = FALSE;
+/* Header: Global: Text area */
+$handler->display->display_options['header']['area']['id'] = 'area';
+$handler->display->display_options['header']['area']['table'] = 'views';
+$handler->display->display_options['header']['area']['field'] = 'area';
+$handler->display->display_options['header']['area']['content'] = '<div class="clearfix m_bottom_25 m_sm_bottom_20">
+								<h2 class="tt_uppercase color_dark f_left f_mxs_none m_mxs_bottom_15">What Our Customers Say</h2>
+								<div class="f_right clearfix nav_buttons_wrap f_mxs_none">
+									<button class="button_type_7 bg_cs_hover box_s_none f_size_ex_large bg_light_color_1 f_left tr_delay_hover r_corners ti_prev"><i class="fa fa-angle-left"></i></button><button class="button_type_7 bg_cs_hover box_s_none f_size_ex_large bg_light_color_1 f_left m_left_5 tr_delay_hover r_corners ti_next"><i class="fa fa-angle-right"></i></button>
+								</div>
+							</div>';
+$handler->display->display_options['header']['area']['format'] = 'full_html';
+$handler->display->display_options['defaults']['fields'] = FALSE;
+/* Field: Content: Title */
+$handler->display->display_options['fields']['title']['id'] = 'title';
+$handler->display->display_options['fields']['title']['table'] = 'node';
+$handler->display->display_options['fields']['title']['field'] = 'title';
+$handler->display->display_options['fields']['title']['label'] = '';
+$handler->display->display_options['fields']['title']['exclude'] = TRUE;
+$handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+$handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+$handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+/* Field: Content: Address */
+$handler->display->display_options['fields']['field_address']['id'] = 'field_address';
+$handler->display->display_options['fields']['field_address']['table'] = 'field_data_field_address';
+$handler->display->display_options['fields']['field_address']['field'] = 'field_address';
+$handler->display->display_options['fields']['field_address']['label'] = '';
+$handler->display->display_options['fields']['field_address']['exclude'] = TRUE;
+$handler->display->display_options['fields']['field_address']['element_label_colon'] = FALSE;
+/* Field: Content: Body */
+$handler->display->display_options['fields']['body']['id'] = 'body';
+$handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+$handler->display->display_options['fields']['body']['field'] = 'body';
+$handler->display->display_options['fields']['body']['label'] = '';
+$handler->display->display_options['fields']['body']['exclude'] = TRUE;
+$handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+/* Field: Field: Image */
+$handler->display->display_options['fields']['field_single_image']['id'] = 'field_single_image';
+$handler->display->display_options['fields']['field_single_image']['table'] = 'field_data_field_single_image';
+$handler->display->display_options['fields']['field_single_image']['field'] = 'field_single_image';
+$handler->display->display_options['fields']['field_single_image']['label'] = '';
+$handler->display->display_options['fields']['field_single_image']['exclude'] = TRUE;
+$handler->display->display_options['fields']['field_single_image']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_single_image']['click_sort_column'] = 'fid';
+$handler->display->display_options['fields']['field_single_image']['type'] = 'image_url';
+$handler->display->display_options['fields']['field_single_image']['settings'] = array(
+  'url_type' => '0',
+  'image_style' => '',
+  'image_link' => '',
+);
+/* Field: Global: Custom text */
+$handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+$handler->display->display_options['fields']['nothing']['table'] = 'views';
+$handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+$handler->display->display_options['fields']['nothing']['label'] = '';
+$handler->display->display_options['fields']['nothing']['alter']['text'] = '<div>
+									<blockquote class="r_corners shadow f_size_large relative m_bottom_15">[body]</blockquote>
+									<img class="circle m_left_20 d_inline_middle" src="[field_single_image]" alt="[title]"  />
+									<div class="d_inline_middle m_left_15">
+										<h5 class="color_dark"><b>[title]</b></h5>
+										<p>[field_address]</p>
+									</div>
+								</div>';
+$handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+
+/* Display: Testimonials */
+$handler = $view->new_display('block', 'Testimonials', 'block_1');
+$handler->display->display_options['defaults']['header'] = FALSE;
+/* Header: Global: Text area */
+$handler->display->display_options['header']['area']['id'] = 'area';
+$handler->display->display_options['header']['area']['table'] = 'views';
+$handler->display->display_options['header']['area']['field'] = 'area';
+$handler->display->display_options['header']['area']['content'] = '<div class="clearfix m_bottom_25 m_sm_bottom_20 wrapper">
+								<h2 class="color_dark f_left f_sm_none m_sm_bottom_15">Testimonials</h2>
+								<div class="f_right clearfix  f_sm_none m-top-0">
+									<button class="button_type_7 bg_cs_hover box_s_none f_size_ex_large bg_light_color_1 f_left tr_delay_hover r_corners ti_prev"><i class="fa fa-angle-left"></i></button><button class="button_type_7 bg_cs_hover box_s_none f_size_ex_large bg_light_color_1 f_left m_left_5 tr_delay_hover r_corners ti_next"><i class="fa fa-angle-right"></i></button>
+								</div>
+							</div>';
+$handler->display->display_options['header']['area']['format'] = 'full_html';
+$handler->display->display_options['defaults']['fields'] = FALSE;
+/* Field: Content: Title */
+$handler->display->display_options['fields']['title']['id'] = 'title';
+$handler->display->display_options['fields']['title']['table'] = 'node';
+$handler->display->display_options['fields']['title']['field'] = 'title';
+$handler->display->display_options['fields']['title']['label'] = '';
+$handler->display->display_options['fields']['title']['exclude'] = TRUE;
+$handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+$handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+$handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+/* Field: Content: Address */
+$handler->display->display_options['fields']['field_address']['id'] = 'field_address';
+$handler->display->display_options['fields']['field_address']['table'] = 'field_data_field_address';
+$handler->display->display_options['fields']['field_address']['field'] = 'field_address';
+$handler->display->display_options['fields']['field_address']['label'] = '';
+$handler->display->display_options['fields']['field_address']['exclude'] = TRUE;
+$handler->display->display_options['fields']['field_address']['element_label_colon'] = FALSE;
+/* Field: Content: Body */
+$handler->display->display_options['fields']['body']['id'] = 'body';
+$handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+$handler->display->display_options['fields']['body']['field'] = 'body';
+$handler->display->display_options['fields']['body']['label'] = '';
+$handler->display->display_options['fields']['body']['exclude'] = TRUE;
+$handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+/* Field: Field: Image */
+$handler->display->display_options['fields']['field_single_image']['id'] = 'field_single_image';
+$handler->display->display_options['fields']['field_single_image']['table'] = 'field_data_field_single_image';
+$handler->display->display_options['fields']['field_single_image']['field'] = 'field_single_image';
+$handler->display->display_options['fields']['field_single_image']['label'] = '';
+$handler->display->display_options['fields']['field_single_image']['exclude'] = TRUE;
+$handler->display->display_options['fields']['field_single_image']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_single_image']['click_sort_column'] = 'fid';
+$handler->display->display_options['fields']['field_single_image']['type'] = 'image_url';
+$handler->display->display_options['fields']['field_single_image']['settings'] = array(
+  'url_type' => '0',
+  'image_style' => '',
+  'image_link' => '',
+);
+/* Field: Global: Custom text */
+$handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+$handler->display->display_options['fields']['nothing']['table'] = 'views';
+$handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+$handler->display->display_options['fields']['nothing']['label'] = '';
+$handler->display->display_options['fields']['nothing']['alter']['text'] = '<div>
+									<blockquote class="r_corners shadow f_size_large relative m_bottom_15">[body]</blockquote>
+									<img class="circle m_left_20 d_inline_middle" src="[field_single_image]" alt="">
+									<div class=" d_inline_middle m_left_15 c-testi">
+										<h5 class="color_dark"><b>[title]</b></h5>
+										<p>[field_address]</p>
+									</div>
+								</div>';
+$handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+$translatables['testimonial'] = array(
+  t('Master'),
+  t('Testimonial'),
+  t('more'),
+  t('Apply'),
+  t('Reset'),
+  t('Sort by'),
+  t('Asc'),
+  t('Desc'),
+  t('Block'),
+  t('<div class="clearfix m_bottom_25 m_sm_bottom_20">
+								<h2 class="tt_uppercase color_dark f_left f_mxs_none m_mxs_bottom_15">What Our Customers Say</h2>
+								<div class="f_right clearfix nav_buttons_wrap f_mxs_none">
+									<button class="button_type_7 bg_cs_hover box_s_none f_size_ex_large bg_light_color_1 f_left tr_delay_hover r_corners ti_prev"><i class="fa fa-angle-left"></i></button><button class="button_type_7 bg_cs_hover box_s_none f_size_ex_large bg_light_color_1 f_left m_left_5 tr_delay_hover r_corners ti_next"><i class="fa fa-angle-right"></i></button>
+								</div>
+							</div>'),
+  t('<div>
+									<blockquote class="r_corners shadow f_size_large relative m_bottom_15">[body]</blockquote>
+									<img class="circle m_left_20 d_inline_middle" src="[field_single_image]" alt="[title]"  />
+									<div class="d_inline_middle m_left_15">
+										<h5 class="color_dark"><b>[title]</b></h5>
+										<p>[field_address]</p>
+									</div>
+								</div>'),
+  t('Testimonials'),
+  t('<div class="clearfix m_bottom_25 m_sm_bottom_20 wrapper">
+								<h2 class="color_dark f_left f_sm_none m_sm_bottom_15">Testimonials</h2>
+								<div class="f_right clearfix  f_sm_none m-top-0">
+									<button class="button_type_7 bg_cs_hover box_s_none f_size_ex_large bg_light_color_1 f_left tr_delay_hover r_corners ti_prev"><i class="fa fa-angle-left"></i></button><button class="button_type_7 bg_cs_hover box_s_none f_size_ex_large bg_light_color_1 f_left m_left_5 tr_delay_hover r_corners ti_next"><i class="fa fa-angle-right"></i></button>
+								</div>
+							</div>'),
+  t('<div>
+									<blockquote class="r_corners shadow f_size_large relative m_bottom_15">[body]</blockquote>
+									<img class="circle m_left_20 d_inline_middle" src="[field_single_image]" alt="">
+									<div class=" d_inline_middle m_left_15 c-testi">
+										<h5 class="color_dark"><b>[title]</b></h5>
+										<p>[field_address]</p>
+									</div>
+								</div>'),
+);

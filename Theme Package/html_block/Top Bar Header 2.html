@@ -1,0 +1,70 @@
+<!-- 
+- Block Title: <none>
+- Block description: Top Bar Header 2
+- Region setting: Top Bar Header 2
+- Text format: PHP code
+- Show block on specific pages: All pages except those listed
+
+-->
+<?php global $language, $base_url, $user; ?>
+<div class="col-lg-4 col-md-4 col-sm-5 t_xs_align_c">
+                    <ul class="d_inline_b horizontal_list clearfix f_size_small users_nav">
+                <?php if ($user->uid) : ?>
+                        <li><a href="<?php echo $base_url; ?>/user/logout" class="default_t_color">Log out</a></li>
+                <?php else :?>
+                        <li><a href="#" class="default_t_color" data-popup="#login_popup">Log in</a></li>
+                <?php endif; ?>
+                        <li><a href="<?php echo $base_url; ?>/user" class="default_t_color">My Account</a></li>
+<?php if ($user->uid) : ?>
+                        <li><a href="<?php echo $base_url; ?>/user/<?php echo $user->uid ?>/orders" class="default_t_color">List Orders</a></li>
+<?php else: ?>
+<li><a href="<?php echo $base_url; ?>/user" class="default_t_color">List Orders</a></li>
+<?php endif; ?>
+                        <li><a href="<?php echo $base_url; ?>/checkout" class="default_t_color">Checkout</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-2 t_align_c t_xs_align_c">
+                    <p class="f_size_small">Call us toll free: <b class="color_dark">(123) 456-7890</b></p>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-5 t_align_r t_xs_align_c">
+                    <ul class="horizontal_list clearfix d_inline_b t_align_l f_size_small site_settings type_2">
+                        <li class="container3d relative">
+                            <a role="button" href="#" class="color_dark" id="lang_button">
+<img class="d_inline_middle m_right_10" width="19" height="12" src="<?php print $base_url; ?>/sites/all/modules/languageicons/flags/<?php print $language->language ?>.png" alt="">
+<?php print $language->name; ?>
+</a>
+<div class="dropdown_list type_2 top_arrow color_light">
+<?php 
+						          $block = block_get_blocks_by_region('language'); 
+						          print render($block ); 
+					            ?>
+</div>
+                        </li>
+<?php $currency = commerce_currency_load(commerce_multicurrency_get_user_currency_code()); ?>
+<li class="m_left_20 relative container3d">
+<a role="button" href="#" class="color_dark" id="currency_button"><span class="scheme_color"><?php print $currency['symbol']; ?></span> <?php print $currency['major_unit']; ?></a>
+
+<div class="dropdown_list type_2 top_arrow color_light">
+<?php 
+						          $block = block_get_blocks_by_region('currency'); 
+						          print render($block ); 
+					            ?>
+</div>
+
+</li>
+                    </ul>
+                </div>
+<div class="popup_wrap d_none" id="login_popup">
+	<section class="popup r_corners shadow">
+		<button class="bg_tr color_dark tr_all_hover text_cs_hover close f_size_large"><i class="fa fa-times"></i></button>
+		<h3 class="m_bottom_20 color_dark">Log In</h3>
+		<?php
+			$block['content'] = drupal_get_form('user_login_block');
+			print render($block['content']);
+		?>
+		<div class="bg_light_color_1 t_mxs_align_c">
+			<h3 class="color_dark d_inline_middle d_mxs_block m_mxs_bottom_15">New Customer?</h3>
+				<a href="<?php echo $base_url; ?>/user/register" role="button" class="tr_all_hover r_corners button_type_4 bg_dark_color bg_cs_hover color_light d_inline_middle m_mxs_left_0">Create an Account</a>
+		</div>
+	</section>
+</div>
