@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Flatastic Documentation</title>
+        <link href="http://fonts.googleapis.com/css?family=Voces" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="style.css"/>
+        <script src="jquery.js"></script>
+        <script src="toc.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $(".question").click(function(){
+                    $(this).next().slideToggle();
+                    $(this).toggleClass('active');
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div id="toc"></div>
+
+        <div id="wrapper">
+            <!-- Overview -->
+            <h2>Overview</h2>
+            <p>Flatastic is a powerful and ultra-responsive theme which can perfectly serve any type of business, freelance or interactive sphere creation. For theme support that cannot be found in this documentation, please visit our <a href="http://www.arrowtheme.com/forums/"> support forum</a>. 
+            <p>Version 1.0: 05/29/2015  <br>
+                Author: <a href="http://www.arrowtheme.com" target="_blank">Arrowtheme</a><br>
+                Design: <a href="http://themeforest.net/user/mad_velikorodnov" target="_blank">mad_velikorodnov</a></p>
+
+
+            <!-- Installation -->
+            <h2>Installation</h2>
+            <p>There are several ways Flatastic can be installed. For existing sites that already have content, the first method will only involve the installation and activation of the theme. The second option includes a full Drupal 7 installation with the same SQL database file used to create the theme demo. Please choose which installation method works best for you and follow the instructions. We do highly recommend you to perform the full installation, especially if you plan on using the Commerce functionality.
+
+            <h3>Theme Installation only</h3>
+            <p>Download Drupal: <a target="_blank" href="https://drupal.org/project/drupal">https://drupal.org/project/drupal</a> to install default Drupal.</p>
+            <p>Video: <a target="_blank" href="https://www.youtube.com/watch?v=7vPnlK1yiLw">Installing Drupal 7</a></p>
+            Option 1:
+            <ul>
+                <li>Visit <strong>yourdomain.com/admin/appearance/install</strong></li>
+                <li>Upload the <strong>/Theme Package/flatastic.zip</strong> file</li>
+                <li>Enable and set to default</li>
+            </ul>
+            Option 2:
+            <ul>
+                <li>Extract the <strong>/Theme Package/flatastic.zip</strong> file and upload via FTP to <strong>/sites/all/themes</strong></li>
+                <li>Visit <strong>yourdomain.com/admin/appearance/</strong></li>
+                <li>Scroll down to "DISABLED THEMES" and set and enable Flatastic</li>
+            </ul>
+
+            <h3>Full Drupal Installation</h3>
+            <p>The following steps are designed for people that have experience in installing Drupal and importing databases manually. If you do not feel comfortable with performing these steps by yourself, contact your server administrator for help. <strong>NOTE</strong> this option is for a completely new Drupal install. Do not import the provided SQL file into an existing Drupal database or you will lose all of your data!</p>
+            <ol>
+                <li>Create a database for this installation of Drupal and import the SQL file that come with the theme.</li>
+                <li>Follow <a href="http://drupal.org/documentation/install/settings-file" target="_blank"> these directions</a> to create the settings.php file. Save this file somewhere so you can copy it over to the Drupal installation we have provided.</li>
+                <li>Copy the entire contents of the Full Demo Installation/flatastic folder to the location on your web server where you want your site to be accessed. If you want your primary domain to point to your install of Flatastic, copy everything to the root folder. If you want your site to be accessed as a subsection of your domain (for example: <strong>yourdomain.com/drupal</strong>) then simply rename the Full Demo Installation/flatastic folder to the desired name and upload to the root of your server. Also be sure to copy over the settings.php file mentioned in the previous step</li>
+                <li>Login to your site <strong>yourdomain.com/user</strong> with the username <strong>admin</strong> and the password <strong>admin123</strong> and visit <strong>yourdomain.com/admin/people</strong> to change the admin username and password.</li>
+                <li>Go through the Drupal configuration found in <strong>yourdomain.com/admin/config</strong> options and update all the necessary information to reflect your website. Also be sure to visit <strong>yourdomain.com/admin/config/media/file-system</strong> and change the Temporary Directory.</li>
+            </ol>
+            <p><img src="images/config-theme.jpg"></p>
+			
+			<h3>One Click Install Full Demo</h3>
+            <p>The following steps are designed for people that have experience in installing Drupal and importing databases manually. If you do not feel comfortable performing these steps by yourself, contact your server administrator for help. <strong>NOTE</strong> this option is for a completely new Drupal install. Do not import the provided SQL file into an existing Drupal database or you will lose all of your data!</p>
+            <ol>
+                <li>Create a database for this installation of Drupal and import the SQL file that come with the theme.</li>
+                <li>
+					<p><strong>Step 1</strong>: Run url <strong>http://yourdomain.com/</strong> and Choose Flatastic (Install profile for Flatastic themes)</p>
+					<p><img src="images/install1.png"></p>
+				</li>
+                <li>
+					<p><strong>Step 2</strong></p>
+					<p><img src="images/install2.png"></p>
+				</li>
+                <li>
+					<p><strong>Step 3</strong></p>
+					<p><img src="images/install3.png"></p>
+				</li>
+                <li>
+					<p><strong>Step 4</strong></p>
+					<p><img src="images/install4.png"></p>
+				</li>
+				<li>
+					<p><strong>Step 5</strong></p>
+					<p><img src="images/install5.png"></p>
+				</li>
+				<li>
+					<p><strong>You can see this video</strong></p>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/BlXoLx2lbjk" frameborder="0" allowfullscreen></iframe>
+				</li>
+            </ol>
+
+
+            <!-- General Setting -->
+            <h2>General Setting</h2>
+            <h3>Modules</h3>
+            <p>You can find all of the modules used in the demo in the <strong>modules.zip</strong> archive in the root of the folder you downloaded from ThemeForest. Not all modules are required to use the theme, but below is a list of modules you will need to utilize various elements of the theme</p>
+            <p>Copy all folders under <strong>"/Theme Package/modules/*"</strong> to your existing drupal site <strong>"/sites/all/modules/*"</strong></p>
+            <p>Copy all folder under <strong>"/Theme Package/libraries/*"</strong> to your existing drupal site <strong>"/sites/all/libraries/*"</strong>, if you dont have <strong>"/sites/all/libraries"</strong> on your existing site, you need to create one.</p>
+            <h4>General Required Modules</h4>
+            <ul>
+                <li><a href="http://drupal.org/project/jquery_update">jQuery update (7.x-2.x-dev)</a></li>
+                <li><a href="http://drupal.org/project/ctools">ctools</a></li>
+                <li><a href="http://drupal.org/project/views">Views</a></li>
+                <li><a href="https://drupal.org/project/libraries">Libraries API</a></li>
+                <li><a href="https://drupal.org/project/pathauto">Pathauto</a></li>
+                <li><a href="https://drupal.org/project/token">Token</a></li>
+                <li><a href="https://drupal.org/project/panels">Panels</a></li>
+                <li><a href="https://www.drupal.org/project/block_class">Block Class</a></li>
+                <li><a href="https://www.drupal.org/project/ckeditor">CKEditor - WYSIWYG HTML editor</a></li>
+                <li><a href="https://www.drupal.org/project/entity">Entity</a></li>
+                <li><a href="https://www.drupal.org/project/entityreference">Entity reference</a></li>
+                <li><a href="https://www.drupal.org/project/google_analytics">Google Analytics</a></li>
+                <li><a href="https://www.drupal.org/project/media">Media</a></li>
+                <li><a href="https://www.drupal.org/project/newsletter">Newsletter</a></li>
+                <li><a href="https://www.drupal.org/project/quicktabs">Quick Tabs</a></li>
+                <li><a href="https://www.drupal.org/project/rules">Rules</a></li>
+                <li><a href="https://drupal.org/project/twitter_block">Twitter Block</a></li>
+            </ul>
+
+            <h4>Shop</h4>
+            <ul>
+                <li><a href="http://drupal.org/project/commerce">Commerce</a></li>
+                <li> Commerce Add Link (found inside the modules.zip file) </li>
+                <li><a href="http://drupal.org/project/flag">Flag (for Wishlist functionality)</a></li>
+            </ul>
+
+            <h4>Notes</h4>
+            <ul>
+                <li><a href="http://drupal.org/project/prev_next">Prev/Next API (for article pagination)</a></li>
+            </ul>
+
+            <p>Visit <strong>yourdomain.com/admin/modules</strong> to activate all modules needed to install (select the following checkboxes to <strong>ENABLE</strong> those modules and click <strong>Save configuration</strong>).</p>
+            <p><img src="images/active_modules.jpg"></p>
+            <p><img src="images/active-modules.jpg"></p>
+            <p><img src="images/active-modules2.jpg"></p>
+            <p><img src="images/active-modules3.jpg"></p>
+            <p><img src="images/active-modules-panels.jpg"></p>
+            <p><img src="images/active-modules4.jpg"></p>
+            <p>Activate modules in Drupal core: <strong>Blog, Contact</strong> and <strong>PHP filter</strong>.</p>
+            <p>Set permissions for module <strong>Contact</strong> (Visit <strong>yourdomain.com/admin/people/permissions#module-contact</strong> and select all checkboxes of "Use the site-wide contact form").</p>
+            <p><img src="images/config-contact.jpg"></p>
+            <p>Set permissions for module <strong>Search</strong> (Visit <strong>yourdomain.com/admin/people/permissions#module-search</strong> and select all checkboxes of "Use search").</p>
+            <p><img src="images/permissions-search.jpg"></p>
+
+            <h3>Text Formats</h3>
+            <p>Remove tag <strong>&lt;br&gt;</strong> auto insert in Block static: Visit <strong>yourdomain.com/admin/config/content/formats/full_html</strong> and uncheck <strong>Convert line breaks into HTML (i.e. &lt;br&gt; and &lt;p&gt;)</strong></p>
+
+            <h3>Theme Settings</h3>
+            <p>Visit <strong>yourdomain.com/admin/appearance/settings/flatastic</strong> to configure your theme's settings. You can select <strong>Page layout, Header layout, Footer layout, Add your own custom CSS, Add your own custom logo, etc.</strong></p>
+            <p><img src="images/setting-theme-layout.png"/></p>
+            <ul>
+                <li><strong>Breadcrumbs :</strong>  If you want to Show Breadcrumbs, select this checkbox.</li>
+                <li><strong>Show Switcher Control:</strong>  If you want to Show Control Switcher to the left, select this checkbox.</li>
+                <li><strong>Social Widget:</strong>  If you want to Show Social Widget to the right, select this checkbox.</li>
+                <li><strong>Your twitter username:</strong>  Setting account your twitter username.</li>
+                <li><strong>You want enable RTL for your website?:</strong>  Setting on/off RTL layout.
+				<p><img src="images/setting-RTL.png"></p>
+				</li>
+            </ul>
+
+            <h4>Settings Theme Layout</h4>
+            <p>Visit <strong>yourdomain.com/admin/appearance/settings/flatastic</strong> select Tab <strong>Design</strong> You can select settings theme layout for Flatastic.</p>
+            <p><img src="images/setting-design.jpg"/></p>
+            <ul>
+                <li><strong>Layout Style:</strong> There are 2 options
+                    <ul>
+                        <li>Wide is default option</li>
+                        <li>Boxed</li>
+                    </ul>
+                </li>
+                
+                <li><strong>Header Style:</strong> There are 4 options
+                    <ul>
+                        <li>Header 1 is default option </li>
+                        <li>Header 2</li>
+                        <li>Header 3</li>
+                        <li>Header 4</li>
+                    </ul>
+                </li>
+
+                <li><strong>Footer Style:</strong> There are 3 options
+                    <ul>
+                        <li>Footer 1 is default option </li>
+                        <li>Footer 2</li>
+                        <li>Footer 3</li>
+                        <li>Footer 4</li>
+                        <li>Footer 5</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Background Layout:</strong> you can select the background color to any color custom you like or select background image.
+                </li>
+                <li>
+                    <strong>CSS:</strong> you can add your own CSS.
+                </li>
+            </ul>
+			
+			<h4>Settings Skins Layout</h4>
+            <p>Visit <strong>yourdomain.com/admin/appearance/settings/flatastic</strong> select Tab <strong>Skin Options</strong> You can select settings skin and color layout for Flatastic.</p>
+            
+            <ul>
+                <li><strong>Skins Layout:</strong> There are 4 options
+                    <ul>
+                        <li>Default</li>
+                        <li>Corporate</li>
+                        <li>Construction</li>
+                        <li>Interior</li>
+                    </ul>
+					<p><img src="images/setting-skins.png"/></p>
+                </li>
+                
+                <li><strong>Skin Colors:</strong> There are 7 options
+                    <ul>
+                        <li>Red (Default)</li>
+                        <li>Green</li>
+                        <li>Orange</li>
+                        <li>Yellow</li>
+                        <li>Yellow Light</li>
+                        <li>Blue</li>
+                        <li>Purple</li>
+                    </ul>
+					<p><img src="images/setting-skins-2.png"/></p>
+                </li>
+            </ul>
+
+            <h4>Settings for Logo, Site Name and slogan</h4>
+            <p>You can change primary Logo by a logo image or use site name text and site slogan.</p>
+            <p><img src="images/setting-logo.jpg"/></p>
+            <p><img src="images/use-logo-image.jpg"/></p>
+            <p>Visit <strong>yourdomain.com/admin/config/system/site-information</strong> to configure your Site Name and Site Slogan.</p>
+            <p><img src="images/setting-sitename.jpg"/></p>
+			
+			<h4>Setting Logo for skins layout</h4>
+            <p>Visit <strong>yourdomain.com/admin/appearance/settings/flatastic</strong> select Tab <strong>Setting Logo for versions</strong> You can setting logo for each skin different.</p>
+            <p><img src="images/setting-logo-items.png"/></p>
+			<ul>
+				<li>You can Use only custom logo default (Use only a logo for all page) by check to field checkbox <strong>Use only custom logo default (Use only a logo for all page)</strong></li>
+				<li><strong>Image Menu:</strong> Image for SHOP menu
+					<p><img src="images/shop-menu-image.png"/></p>
+				</li>
+				<li><strong>Logo Corporate Version:</strong> Logo image for Corporate Version
+					<p><img src="images/logo-corporate.png"/></p>
+				</li>
+				<li><strong>Logo Construction Version:</strong> Logo image for Construction Version
+					<p><img src="images/logo-construction.png"/></p>
+				</li>
+				<li><strong>Logo Interior Version:</strong> Logo image for Interior Version
+					<p><img src="images/logo-interior.png"/></p>
+				</li>
+				<li><strong>Logo One page Version:</strong> Logo image for One page Version
+					<p><img src="images/logo-onepage.png"/></p>
+				</li>
+			</ul>
+			
+
+            <h3>Add Taxonomy</h3>
+            <p>Flatastic has a total of 7 Vocabulary Taxonomies: Blog Categories, Portfolio Categories, Product Attributes, Product Categories, Product Manufacturer, Product Tags, Tags.</p>
+
+            <h4>Blog Categories</h4>
+            <p>Visit <strong>yourdomain.com/admin/structure/taxonomy/add</strong> to add taxonomy <strong>Blog Categories</strong>.</p>
+            <p>Visit <strong>yourdomain.com/admin/structure/taxonomy/blog_categories/add</strong> to Add term for Blog Categories.</p>
+            <p><img src="images/taxonomy-blog-category.jpg"/></p>
+
+            <h4>Portfolio Categories</h4>
+            <p>Visit <strong>yourdomain.com/admin/structure/taxonomy/add</strong> to add taxonomy <strong>Project Category</strong>.</p>
+            <p>Visit <strong>yourdomain.com/admin/structure/taxonomy/portfolio_categories/add</strong> to Add term for Portfolio Categories.</p>
+            <p><img src="images/taxonomy-portfolio-categories.jpg"/></p>
+            
+            <h4>Product Categories</h4>
+            <p>Visit <strong>yourdomain.com/admin/structure/taxonomy/add</strong> to add taxonomy  <strong>Product Categories</strong>.</p>
+            <p>Visit <strong>yourdomain.com/admin/structure/taxonomy/terms/add</strong> to Add term for Product Categories.</p>
+            <p><img src="images/taxonomy-product-categories.jpg"/></p>
+
+            <p>Similar for others taxonomy</p>
+
+            <h3>Add Content Type</h3>
+            
+            <h4>Art Portfolio</h4>
+            <p>Visit <strong>yourdomain.com/admin/structure/types/manage/portfolio/fields</strong> to add fields for content type <strong>Portfolio</strong> (check Add existing field)</p>
+            <img src="images/create-content-type-portfolio.jpg">
+            <p><strong>Fields:</strong></p>
+            <ul>
+                <li><strong>Name:</strong> The name for Portfolio.</li>
+                <li><strong>Body:</strong> The description for Portfolio.</li>
+                <li><strong>Portfolio Categories:</strong> This is a term reference field that is linked to a vocabulary created specifically for this content type.</li>
+                <li><strong>Client:</strong> The text client for Portfolio.</li>
+                <li><strong>Services:</strong> The text services for Portfolio.</li>
+                <li><strong>Skills:</strong> The text skill for Portfolio.</li>
+                <li><strong>Tag:</strong> This is a term reference field that is linked to a vocabulary created specifically for this content type.</li>
+                <li><strong>Image:</strong> The default Image field used for uploading the images of Project node.</li>
+                <li><strong>Multiple Images:</strong> Multiple Image field used for uploading the multi images of Project node.</li>
+                <li><strong>Video:</strong> The link video of Project node.</li>
+                <li><strong>Layout Mode:</strong> Layout field is the format of Project node. There are 2 styles: Style 1 (default) and Style 2.</li>
+            </ul>
+            <p><img src="images/frontend-project.jpg"></p>
+            
+            <h4>Blog</h4>
+            <p>Visit <strong>yourdomain.com/admin/structure/types/manage/blog/fields</strong> to add fields for content type <strong>Blog</strong> (check Add existing field)</p>
+            <img src="images/create-content-type-blog.jpg">
+            <p><strong>Fields:</strong></p>
+            <ul>
+                <li><strong>Title:</strong> The title for Blog.</li>
+                <li><strong>Body:</strong> The description for Blog.</li>
+                <li><strong>Image:</strong> The default Image field used for uploading the images of Blog node.</li>
+                <li><strong>Blog Categories:</strong> This is a term reference field that is linked to a vocabulary created specifically for this content type.</li>  
+                <li><strong>Rating:</strong> The rating field used for rate this content type.</li>
+                              
+            </ul>
+            <p><img src="images/frontend-blog.jpg"></p>
+
+            <h4>About</h4>
+            <p>Create a content type named <strong>About</strong> (check Add existing field)</p>
+            <img src="images/create-content-type-about.jpg">
+            <p><strong>Fields:</strong></p>
+            <ul>
+                <li><strong>Title:</strong> The title for your about.</li>
+                <li><strong>Body:</strong> The description for your about.</li>
+                <li><strong>Image:</strong> The default Image field used for uploading the images.</li>
+            </ul>
+            <p><img src="images/frontend-about.jpg"/></p>
+
+            <h4>Clients</h4>
+            <p>Create a content type named <strong>Client</strong> (check Add existing field)</p>
+            <img src="images/create-content-type-client.jpg">
+            <p><strong>Fields:</strong></p>
+            <ul>
+                <li><strong>Title:</strong> The title for your client.</li>
+                <li><strong>Body:</strong> The description for your client.</li>
+                <li><strong>Image:</strong> The default Image field used for uploading the images.</li>
+                <li><strong>Website:</strong> The website for your client.</li>
+            </ul>
+            <p><img src="images/frontend-client.jpg"/></p>
+
+
+            <h4>Product Display</h4>
+            <p>Create a content type named <strong>Product Display</strong> (check Add existing field)</p>
+            <img src="images/create-content-type-product.jpg">
+            <p><strong>Fields:</strong></p>
+            <ul>
+                <li><strong>Title:</strong> The title for product.</li>
+                <li><strong>Body:</strong> The description for product.</li>
+                <li><strong>Product Selection:</strong> This is a product reference field that is linked to a product created specifically for this content type.</li>
+                <li><strong>Product Categories:</strong> This is a term reference field that is linked to a vocabulary created specifically for this content type.</li>
+                <li><strong>Images:</strong> The default Image field used for uploading the images.</li>
+                <li><strong>Product Images:</strong> The Product Image field used for uploading the multi images.</li>
+                <li><strong>Product Attributes:</strong> This is a term reference field that is linked to a vocabulary created specifically for this content type.</li>
+                <li><strong>Manufacturer:</strong> This is a term reference field that is linked to a vocabulary created specifically for this content type.</li>
+                <li><strong>Length:</strong> The length for product.</li>
+                <li><strong>Weight:</strong> The weight for product.</li>
+                <li><strong>Custom:</strong> The custom for product.</li>
+                <li><strong>Specifications:</strong> The specifications for product.</li>
+                <li><strong>Tags:</strong> This is a term reference field that is linked to a vocabulary created specifically for this content type.</li>
+                <li><strong>Rating:</strong> The rating for product.</li>
+                <li><strong>Layout Mode:</strong> This is a term reference field that is linked to a vocabulary created specifically for this content type.</li>
+            </ul>
+            <p><img src="images/frontend-product.jpg"/></p>
+            
+            <h4>Services</h4>
+            <p>Create a content type named <strong>Services</strong> (check Add existing field)</p>
+            <img src="images/create-content-type-services.jpg">
+            <p><strong>Fields:</strong></p>
+            <ul>
+                    <li><strong>Title:</strong> The title for service.</li>
+                    <li><strong>Body:</strong> The description for service.</li>
+                    <li><strong>Icon:</strong> The text class of the icon you want to use (see Icons Features page for full list).</li>
+                    <li><strong>Product Image:</strong> The image for service.</li>
+                    
+            </ul>
+            <p><img src="images/frontend-services.jpg"/></p>
+            
+            
+            <h4>Team</h4>
+            <p>Create a content type named <strong>Team</strong> (check Add existing field)</p>
+            <img src="images/create-content-type-team.jpg">
+            <p><strong>Fields:</strong></p>
+            <ul>
+                <li><strong>Title:</strong> The title for your team.</li>
+                <li><strong>Body:</strong> The description for your team.</li>
+                <li><strong>Image:</strong> The default Image field used for uploading the images. It is banner image display on the single your team nodes.</li>
+                <li><strong>Job:</strong> The Job for member of your team.</li>
+                <li><strong>Link Facebook:</strong> The Facebook URL for member of your team.</li>
+                <li><strong>Link Twitter:</strong> The Twitter URL for member of your team.</li>             
+                <li><strong>Link Google Plus:</strong> The Google URL for member of your team.</li>
+                <li><strong>Link Pinterest URL:</strong> The Pinterest URL for member of your team.</li>
+                <li><strong>Link Linkedin URL:</strong> The Linkedin URL for member of your team.</li>               
+            </ul>
+            <p><img src="images/frontend-team.jpg"/></p>			
+
+            <h4>Testimonial </h4>
+            <p>Create a content type named <strong>Testimonial </strong> (check Add existing field)</p>
+            <img src="images/create-content-type-testimonial.jpg">
+            <p><strong>Fields:</strong></p>
+            <ul>
+                <li><strong>Title:</strong> The title for Testimonial.</li>
+                <li><strong>Body:</strong> The description for Testimonial.</li>
+                <li><strong>Image:</strong> The default Image field used for uploading the images avatar .</li>
+                <li><strong>Address:</strong> The Address for Client.</li>
+            </ul>
+            <p><img src="images/frontend-testimonial.jpg"/></p>
+
+
+            <h3>Config URL aliases</h3>
+            <p>Visit <strong>yourdomain.com/admin/config/search/path/patterns</strong> to configure URL aliases of Portfolio and Blog.</p>
+            <p><img src="images/config-url.jpg"></p>
+
+            <h3>Add Node</h3>
+            <h4>Blog</h4>
+            <p>Visit <strong>yourdomain.com/node/add/blog</strong> to create a node blog.</p>
+            <p><img src="images/add-node-blog.jpg"></p>
+
+            <h4>Portfolio</h4>
+            <p>Visit <strong>yourdomain.com/node/add/portfolio</strong> to create a node portfolio.</p>
+            <p><img src="images/add-node-project.jpg"></p>
+
+            <h4>About</h4>
+            <p>Visit <strong>yourdomain.com/node/add/about</strong> to create a node for About.</p>
+            <p><img src="images/add-node-about.jpg"></p>
+
+            <h4>Services</h4>
+            <p>Visit <strong>yourdomain.com/node/add/services</strong> to create a node for Services.</p>
+            <p><img src="images/add-node-services.jpg"></p>
+
+            <h4>Team</h4>
+            <p>Visit <strong>yourdomain.com/node/add/team</strong> to create a node for Team.</p>
+            <p><img src="images/add-node-team.jpg"></p>
+
+            <h4>Clients</h4>
+            <p>Visit <strong>yourdomain.com/node/add/clients</strong> to create a node for Clients.</p>
+            <p><img src="images/add-node-client.jpg"></p>
+
+            <h4>Product Display</h4>
+            <p>Visit <strong>yourdomain.com/node/add/product-display</strong> to create a node for Product Display.</p>
+            <p><img src="images/add-node-product.jpg"></p>
+
+            <h4>Testimonials</h4>
+            <p>Visit <strong>yourdomain.com/node/add/testimonials</strong> to create a node for Testimonials.</p>
+            <p><img src="images/add-node-testimonial.jpg"></p>
+
+            <h3>Create View Blocks</h3>
+            <p>Flatastic features 26 View Blocks and View Pages created from the content types. You can create the View by importing code in the folder <strong>"files_export_views"</strong>.</p>
+            <h3>For example: import view Blog Block</h3>
+            <p>Visit <strong>yourdomain.com/admin/structure/views/import</strong> to create a view by importing code from (/files_export_views/blog_block.txt).</p>
+            <ul>
+                <li>Copy all content from (/files_export_views/blog_block.txt) paste in to <strong>Paste page code here</strong>.</li>
+                <li><strong>View name</strong>: "blog_block" is $view->name</li>
+                <li>Set NULL for <strong>Replace an existing view if one exists with the same name</strong> if this block doesn't exist</li>
+            </ul>
+            <p><img src="images/import-views.jpg"></p>
+            <p>Result Views: <img src="images/result-views.jpg"></p>
+            <p>Result Blocks: <img src="images/result-blocks.jpg"></p>
+
+            <h3>Create View</h3>
+            <p><img src="images/create-view-1.jpg"></p>
+            <p><img src="images/create-view-2.jpg"></p>
+            <ul>
+                <li><strong>Display name:</strong> The name for View.</li>
+                <li><strong>Title:</strong> The title for Views.</li>
+                <li><strong>Filter Criteria:</strong> Content type display in View.</li>
+                <li><strong>Header / Footer :</strong> Text display above / below in View.</li>
+                <li><strong>Pager:</strong> Setting number of items display, paging or not</li>
+                <li><strong>Machine Name:</strong> Specify name block to assgin region, panel and template file of View</li>
+                <li><strong>Theme Information:</strong> Specify all file template of View</li>
+            </ul>
+
+            <h3>Clone View</h3>
+            <p><img src="images/clone-view-1.jpg"></p>
+            <p>Click clone in top right corner of View</p>
+            <p>Change Machine Name for new clone Views</p>
+            <p>Click information to open pop up. This show all templates file of new Clone View</p>
+            <p><img src="images/clone-view-2.jpg"></p>
+            <p>Open source code, clone file template of old view (by old machine name) and rename to new view </p>
+            <p>Example: Original View</p>
+            <ul>
+                <li><strong>Machine name:</strong> block_featured</li>
+                <li><strong>File template:</strong> views-view-unformatted--product-block--block-featured.tpl.php</li>
+            </ul>
+            <p>New Clone View:</p>
+            <ul>
+                <li><strong>Machine name:</strong> block_featured_clone</li>
+                <li><strong>File template:</strong> views-view-unformatted--product-block--block-featured-clone.tpl.php</li>
+            </ul>
+            <p>Click Save, then clear All Caches</p>
+
+            <h3>Assign View</h3>
+            <h4>Assgin to region in block</h4>
+            <p>Visit <strong>yourdomain.com/admin/structure/block</strong></p>
+            <p><img src="images/assign-view-1.jpg"></p>
+            <h4>Assgin to region in page panel</h4>
+            <p>Visit <strong>yourdomain.com/admin/structure/pages</strong> and select page to edit</p>
+            <p><img src="images/assign-view-2.jpg"></p>
+            <p><img src="images/assign-view-3.jpg"></p>
+
+
+            
+            <!-- Front Page -->
+            <h2>Front Page</h2>
+            <p>The front page seen on the Flatastic demo consists of various block regions. Some are generated by Views, and some are custom blocks with special markup. You can find all of the markup used on the demo front page inside the <strong>html_block</strong> and <strong>content_page_demo</strong> folder in the root of the theme folder.</p>
+            <p>Visit <strong>yourdomain.com/admin/structure/block</strong> to disable all Blocks in Region Help default (return "No blocks in this region") and click button <strong>Save blocks</strong></p>
+
+            <h3>Block Regions</h3>
+            <p>Flatastic features 34 block regions where you can add your own custom content. Visit <strong>yourdomain.com/admin/structure/block</strong> to add your own content to the defined block regions. Press <strong>"Add Block"</strong> to create a new custom block, or select an existing block from the Disabled list below the defined block regions.</p>
+            <p>All HTML files to create Block Static in folder <strong>html_block</strong></p>
+            <ul>
+                <li><strong>Block Title:</strong> The title for Block.</li>
+                <li><strong>Block description:</strong> The description for Block.</li>
+                <li><strong>Region setting:</strong> The region display for Block.</li>
+                <li><strong>Text format:</strong> Text format for slider.</li>
+                <li><strong>Show block on specific pages:</strong> Show block on specific pages
+                    <ul>
+                        <li>All pages except those listed</li>
+                        <li>Only the listed pages</li>
+                        <li>Pages on which this PHP code returns TRUE (experts only)</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h4>Header Block Regions</h4>
+            <p>Flatastic features 9 header regions: <strong>Top Bar Header 1, Top Bar Header 2, Top Bar Header 3, Info Header 3, Top Bar Header 4, Custom Link Header 4, Language, Currency, Menu</strong> You can use the "demonstrate block regions" link on <strong>yourdomain.com/admin/structure/block</strong> to see exactly where these are located, but the names are fairly self explanatory. If you would like to mimic the social icon region seen above the menu on the demo you can use the following markup in a block:</p>
+            <img src="images/region-header.jpg"/>
+
+            <h4>Content Block Regions</h4>
+            <p>Flatastic has a total of 9 content block regions: <strong> Slider, Sidebar Slider, Social Widget, Features Blog, Before Content, Content, Right Siderbar, Search, Cart</strong> Like the Header regions described above these regions are fairly self explanation. One thing to note is that the before content regions are called outside of the main content wrap so you can use completely full width content (like the Slider) or use your own custom wrappers. Those regions are there to do whatever you like with and are not restricted by any additional markup.</p>
+            <img src="images/region-content.jpg"/>
+
+            <h4>Footer Block Regions</h4>
+            <p>Finally there are 10 footer block regions: <strong> Footer Top, Footer Box 1, Footer Box 2, Footer Box 3, Footer Box 4, Footer Box 5, Footer Box 6, Footer Box 7, Footer Box 8 and Footer Bottom.</strong> </p>
+            <img src="images/region-footer.jpg"/>
+
+            <h3>Menu</h3>
+            <p>Visit <strong>yourdomain.com/admin/structure/block/manage/system/main-menu/configure</strong> select Region Setting of Flatastic to be Menu Region to show menu.</p>
+            <img src="images/show-menu.jpg">
+            <p>Flatastic has a block region called Menu which can be used to add any menu block you like. The demo simply uses the default Main Menu block but you can create a custom menu block if you like.</p>
+            <img src="images/menu-2.jpg">
+            <p><strong>Note:</strong> make sure to check the "show as expanded" box on all parent items with children to ensure the dropdown menu works correctly.</p>            
+
+            <h3>Revolution Sliders</h3>
+            <p>Flatastic support Revolution Slider in module. You need install, active for module "art_revolution".</p>
+            <p><img src="images/revolution-slider-module.jpg"></p>
+            <p>Visit <strong>yourdomain.com/admin/art_revolution</strong> to set up global settings for Revolution Slider.</p>
+            <p><img src="images/revolution-slider-setting.jpg"></p>
+            <p><img src="images/revolution-slider-edit.jpg"></p>
+
+            <p>Visit <strong>yourdomain.com/admin/art_revolution/1/globalsettings</strong> to adjust the Global settings for the Revolution Slider.</p>
+            <p><img src="images/revolution-slider-globalsetting.jpg"></p>
+
+            <h2>Home Page Demo</h2>
+            <p>Flatastic supports 6 types of Home Page display:</p>
+            <ul>
+                <li>Home Variant 1</li>
+                <li>Home Variant 2</li>
+                <li>Home Variant 3</li>
+                <li>Home Variant 4</li>
+                <li>Home Variant 5</li>
+                <li>Style One Page</li>
+            </ul>
+            <p>Example: <a href="http://arrowtheme.com/flatastic/">Home Page Default</a></p>
+            <p>Visit <strong>yourdomain.com/admin/structure/pages/import</strong> to create a panel page by importing code from (/files_export_panels/files_export_panels.txt).</p>
+            <ul>
+                <li>Copy all content from (/files_export_panels/homepage.txt) and paste into <strong>Paste page code here</strong>.</li>
+                <li><strong>Page name</strong>: "home" is $page->name</li>
+                <li><strong>Path</strong>: "home" is $page->path</li>
+                <li><strong>Allow to overwrite an existing page</strong>: Click if you want this page be home page</li>
+                <li><strong>Save:</strong> Click save button to create the page.</li>
+            </ul>
+            <p><img src="images/panels-home-page.jpg"></p>
+            <p><img src="images/panels-home-page-save.jpg"></p>
+            <p>You can drag and drop Blocks in Layout designer to change position of Blocks.</p>
+            <p><img src="images/panels-dropdown-block.jpg"></p>
+            <p>You can apply the same steps to other Home Versions</p>
+
+            <!-- Shop -->
+            <h2>Shop</h2>
+            <p>Below are main categories list of Product:</p>
+            <ul>
+                <li>Mens</li>
+                <li>Womens</li>
+                <li>Dresses</li>
+            </ul>
+            <p>Configure it the same as <a href="#toc18">Home Page Demo</a></p>
+
+            <!-- Portfolio Page -->
+            <h2>Portfolio Page</h2>
+            Configure it the same as <a href="#toc18">Home Page Demo</a>
+
+            <h3>Portfolio List</h3>
+            <p>Flatastic supports 4 types of Projects display.</p>
+            <ul>
+                <li>Portfolio 2 columns</li>
+                <li>Portfolio 3 columns</li>
+                <li>Portfolio 4 columns</li>
+                <li>Masonry Portfolio</li>
+            </ul>
+            <p><strong>Portfolio Page - Example: <a href="http://arrowtheme.com/flatastic/portfolio-two-columns" target="_blank"> http://arrowtheme.com/flatastic/portfolio-two-columns</a></strong></p>
+            <p>This is the standard Portfolio style which utilizes the "Portfolio" View. If you are not using the full demo or did not use the Custom Content module you can use the code in /files_export_views/portfolios.txt to import this View. Then simply place the "View Page" width path is yourdomain.com/portfolio-two-columns .</p>
+            <p><strong>Views:</strong> yourdomain.com/admin/structure/views/view/portfolio</p>
+            <p><img src="images/result-views-portfolio.jpg"></p>
+            <p><strong>Add Menu:</strong> Visit yourdomain.com/admin/structure/menu/manage/main-menu/add to add a Menu named <strong>Portfolio 2 columns</strong> under parent menu <strong>Portfolio</strong>.</p>
+            <p><img src="images/create-menu-projects-2columns.jpg"></p>
+
+            <h3>Single Portfolio</h3>
+            <p>Flatastic supports 2 types of Content.</p>
+            <ul>
+                <li>Single Portfolio Style 1</li>
+                <li>Single Portfolio Style 2</li>
+            </ul>
+
+            <!-- Pages -->
+            <h2>Pages</h2>
+            <ul>
+                <li>Grid View Category Page</li>
+                <li>List View Category Page</li>
+                <li>Category Page Without Products</li>
+                <li>Product Page With Sidebar</li>
+                <li>Full Width Product Page</li>
+                <li>Wishlist</li>
+                <li>Checkout</li>
+                <li>Manufacturers</li>
+                <li>Manufacturer Page</li>
+            </ul>
+            <p>Configure it the same as <a href="#toc18">Home Page Demo</a></p>
+
+            
+
+            <!-- Blog Page -->
+            <h2>Blog Page</h2>
+            Configure it the same as <a href="#toc18">Home Page Demo</a>
+
+            <h3>Blog</h3>            
+            <p><strong>Blog Page - Example: <a href="http://arrowtheme.com/flatastic/blog_grid_v2" target="_blank"> http://arrowtheme.com/flatastic/blog_grid_v2</a></strong></p>
+            <p>This is the standard Blog style which utilizes the "Blog Style Page" View. If you are not using the full demo or did not use the Custom Content module you can use the code in /files_export_views/blog.txt to import this View. Then simply place the "View Page" width path is yourdomain.com/blog.</p>
+            <p><strong>Views:</strong> yourdomain.com/admin/structure/views/view/blog</p>
+            <p><img src="images/result-views-blog.jpg"></p>
+            <p><strong>Add Menu:</strong> Visit yourdomain.com/admin/structure/menu/manage/main-menu/add to add a Menu named <strong>Grid V2</strong> under parent menu <strong>Blog Masonry</strong>.</p>
+            <p><img src="images/create-menu-blog.jpg"></p>
+
+            <h3>Single Blog</h3>
+            <p>Flatastic supports only 1 type of Content.</p>
+
+
+            <h2>Shop Page</h2>
+            <p>Flatastic supports Drupal Commerce.</p>			
+
+            <h3>Drupal Commerce</h3>
+            <p>Flatastic supports the <a href="http://drupal.org/project/commerce" target="_blank">Drupal Commerce</a> module, a powerful eCommerce framework for building online stores. Drupal Commerce has a complete set of <a href="http://www.drupalcommerce.org/documentation" target="_blank">documentation</a> which we highly recommend reading if you have never used DC before. We will go over some of the basics and highlight the aspects of the theme that enhance DC and how you can use them on your site. If you do plan on using Drupal Commerce with your installation of Flatastic we also highly recommend you install the full demo content as it will provide you a completely functional configuration of Drupal Commerce to begin working with. </p>
+
+            <p>- You need to download and install Drupal Commerce module. <a href="http://www.youtube.com/watch?v=4hYfOu7MPL8">Click here</a> to follow this article.
+                - Active module Commerce: Visit http://yoursite.com/admin/modules and active Commerce.
+                <img src="images/commerce1.jpg"/>
+                <img src="images/commerce2.jpg"/>
+                <img src="images/commerce3.jpg"/>
+                <img src="images/commerce4.jpg"/>
+            </p>
+
+            <p>Create the taxonomy of Product Content Type: Product Attributes, Product Categories, Product Manufacturer, Product Tags. Follow this article <a href="http://arrowtheme.com/userguide/flatastic/#toc8">http://arrowtheme.com/userguide/flatastic/#toc8</a></p>
+            <p>Create the fields of Product Content Type. Follow this article <a href="http://arrowtheme.com/userguide/flatastic/#toc9">http://arrowtheme.com/userguide/flatastic/#toc9</a></p>
+
+            <h4>Product Types</h4>
+
+            <p>When the Commerce module is activated you can visit /admin/commerce to begin configuring Drupal Commerce. We will not be going over every options page, but we will outline the creation of Product Types and explain how that relates to the "Product Display" content type. Visit /admin/commerce/products/types to begin creating your own Product Types. Below is an example of what the fields look like on a Flatastic demo product type:</p>
+            <img src="images/product-type.jpg"><br/><br/>
+            <p>Product Types have some default fields like Product SKU which are required for Commerce products to function correctly, but you can create as many additional fields as you need for your products.</p>
+
+            <h4>Creating products using "Product Display"</h4>
+            <p>As described earlier in the Content Types section of the documentation, Flatastic uses a content type called Product Display which acts as a bridge between Drupal and Commerce products. The "Product Reference" field allows you to create your product(s) at the same time of the node creation. Below is a step by step guide for using this content type to create a Drupal Commerce product node in Flatastic: </p>
+            <ul>
+                <li>1. Visit /node/add/product to begin creating your product (if you do not have this content type refer to the Content Types portion of the docs for instructions on how to set this up). Enter a title like you would for any other Drupal node.</li>
+                <li>2. The "Product Selection" field select a product. </li>
+                <li>3. Configure attributes your product (Additional Information, Catalog, Size, Brand,...) and press the "Save Product" button.</li>
+            </ul>
+
+            <h3>Creating a "Shop" page.</h3>
+            <p>The key to make everything tie together is the View page which uses the search index to display the products. This is done by creating a View like you create any other View, but by selecting your search index from the "Show" select menu during the initial view creation. This View is an unformatted list of the rendered entity, and no other special configurations are needed. The following template files are associated with Flatastic's demo shop page:</p>
+
+            Configure it the same as <a href="#toc18">Home Page Demo</a>
+            <p><strong>Shop Page link: <a href="http://arrowtheme.com/flatastic/category-grid" target="_blank"> http://arrowtheme.com/flatastic/category-grid</a></strong></p>
+
+            <p>Flatastic supports 2 types of List Shop display.</p>
+            <ul>
+                <li>Grid View Category Page</li>
+                <li>List View Category Page</li>
+            </ul>
+
+            <h3>Single Shop</h3>
+            <p>Flatastic supports 2 types to display content.</p>
+            <ul>
+                <li>Product Page With Sidebar</li>
+                <li>Full Width Product Page</li>
+            </ul>
+
+            <h3>Wishlist</h3>
+            <p>To make use of the Wishlist functionality that can be seen on the Flatastic demo you will need to install the Flag module. After that, you need to visit /admin/structure/flags/import to import the following code: </p>
+            <pre>
+                $flags = array();
+                // Exported flag: "Shop".
+                $flags['shop'] = array(
+                  'entity_type' => 'node',
+                  'title' => 'Shop',
+                  'global' => '0',
+                  'types' => array(
+                    0 => 'product_display',
+                  ),
+                  'flag_short' => 'Add to Wishlist',
+                  'flag_long' => '',
+                  'flag_message' => '',
+                  'unflag_short' => 'Remove Wishlist',
+                  'unflag_long' => '',
+                  'unflag_message' => '',
+                  'unflag_denied_text' => '',
+                  'link_type' => 'toggle',
+                  'weight' => 0,
+                  'show_in_links' => array(
+                    'full' => 'full',
+                    'teaser' => 'teaser',
+                    'rss' => 0,
+                    'search_index' => 0,
+                    'search_result' => 0,
+                    'art_portfolio' => 0,
+                    'token' => 0,
+                  ),
+                  'show_as_field' => 1,
+                  'show_on_form' => 0,
+                  'access_author' => '',
+                  'show_contextual_link' => 0,
+                  'i18n' => 0,
+                  'api_version' => 3,
+                );
+                return $flags;
+            </pre>
+            <p>Then if you don't already have it you can use the code in /files_export_views/wishlist-block.txt to create a View to display a block of the Wishlist items. </p>
+
+            <h2>Access Denied</h2>
+            <p>Visit yourdomain.com/node/add/page to create a node basic page. You can use the code demo content in /content_page_demo/Access-denied.html</p>
+            
+            <!-- Shortcodes Page -->
+            <h2>Shortcodes</h2>
+            <ul>
+                <li>Accordion</li>                
+                <li>Alert</li>
+                <li>Buttons</li>
+                <li>Carousel</li>
+                <li>Columns</li>
+                <li>Icons</li>                
+                <li>Tabs</li>
+            </ul>
+            <p>Configure it the same as <a href="#toc31">Access Denied</a></p>
+            
+            <h2>Contacts</h2>
+            <ul>
+                <li>Contacts</li>
+            </ul>
+            <p><strong>Edit Map and infomation contact:</strong> Visit yourdomain.com/admin/structure/block, configure Contact Block Page</p>
+            <p><strong>Edit Contact Form :</strong> Visit yourdomain.com/admin/content, edit Contact Form (type Webform), select tab WEBFORM </p>
+            <p><img src="images/contact-webform.jpg"></p>
+            <p><strong>Add field Contact Form :</strong></p>
+            <p><img src="images/contact-add-field.jpg"></p>
+            <p><strong>Setting email Contact Form :</strong></p>
+            <p><img src="images/contact-setting-email.jpg"></p>       
+
+            <h2>FAQ</h2>
+            <div class="question">
+                <p><strong>Q:</strong>
+                    When I tried to import file sql into this “mySite” DB, mySql pops error message saying
+                    #1062 – Duplicate entry for key ‘PRIMARY’</p>
+            </div>
+            <div class="answer">
+                <p><strong>A:</strong>
+                    Please create a new db (empty db) and import file sql.
+                    If you import db to one available, it will be error.
+                </p>
+            </div>
+
+            <br />
+            <div class="question">
+                <p><strong>Q:</strong>
+                    How to remove the Breadcrumbs, Switcher Control or Social Widget?</p>
+            </div>
+            <div class="answer">
+                <p><strong>A:</strong>
+                    Please go to yourdomain.com/admin/appearance/settings/flatastic, in tab General, uncheck checkbox and Save.
+                </p>
+            </div>
+
+            <br />
+            <div class="question">
+                <p><strong>Q:</strong>
+                    How can we choose different homepage versions for our homepage?</p>
+            </div>
+            <div class="answer">
+                <p><strong>A:</strong>
+                    Please go to yourdomain.com/admin/config/system/site-information, change link in Default front page field. Example: “index-layout-2”.
+                </p>
+            </div>
+
+            <br />
+            <div class="question">
+                <p><strong>Q:</strong>
+                    How to change the fonts style for the theme?</p>
+            </div>
+            <div class="answer">
+                <p><strong>A:</strong>
+                    Please open file: 
+                    <pre>\sites\all\themes\flatastic\css\style.css</pre>
+                    Import new font after line 22 (font Roboto is default). Example:
+                    <pre>@import url(http://fonts.googleapis.com/css?family=NameOfNewFont:300,700,500,300italic);</pre>
+                    Then search and replace all font-family by <b><i>NameOfNewFont</i></b> in all file css.                 
+                </p>
+            </div>
+
+            <br />
+            <div class="question">
+                <p><strong>Q:</strong>
+                    How to hidden notice?</p>
+            </div>
+            <div class="answer">
+                <p><strong>A:</strong>
+                    Please open file
+                    <pre>\sites\all\themes\flatastic\index.php</pre>
+                    and put code in top of file
+                    <pre>error_reporting(0);
+    ini_set('display_errors', FALSE);
+    ini_set('display_startup_errors', FALSE);</pre>              
+                </p>
+            </div>
+
+            <br />
+            <div class="question">
+                <p><strong>Q:</strong>
+                    How to fix this error? <br />
+                    <i>Fatal error: Allowed memory size of 33554432 bytes exhausted (tried to allocate 1041532 bytes) in /path-to-website/includes/database.mysql-common.inc on line 41</i>
+                </p>
+            </div>
+            <div class="answer">
+                <p><strong>A:</strong>
+                    Please open file
+                    <pre>\sites\all\themes\flatastic\index.php</pre>
+                    and put code in top of file
+                    <pre>ini_set('memory_limit','128M');</pre>              
+                </p>
+            </div>
+            
+            <br />
+            <div class="question">
+                <p><strong>Q:</strong>
+                    How to config slider for each homepage?
+                </p>
+            </div>
+            <div class="answer">
+                <p><strong>A:</strong>
+                    Please go to yourdomain.com/admin/structure/block/, then config block "ReVolution Slider Block"
+                </p>
+                <p><img src="images/setting-slider-page.jpg"></p>
+            </div>
+
+            <h2>Thank You</h2>
+            <p>Thank you very much for purchasing the Flatastic Multipurpose Drupal 7 theme. Once again if you have any issues or feedback please contact via the <a href="http://themeforest.net/user/ArrowHiTech" target="_blank">ThemeForest author page</a>. Enjoy using Flatastic!</p>
+            <p>&copy 2015 Arrowtheme.</p>
+        </div>
+        <script>$('#toc').toc();</script>
+    </body>
+</html>
