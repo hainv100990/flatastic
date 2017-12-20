@@ -1,0 +1,23 @@
+<!-- 
+- Block Title: <none>
+- Block description: About Footer Style 2
+- Region setting: Footer Box 1
+- Text format: PHP code
+- Show block on specific pages: All pages except those listed
+index-construction
+one-page
+-->
+
+<?php $theme_root = base_path() . path_to_theme();?>
+			<h3 class="color_light_2 m_bottom_20">About</h3>
+<?php $d_checkbox = theme_get_setting('d_checkbox');?>
+<?php if($d_checkbox == 1):?>
+<?php print theme_get_setting('footer_detail');?>
+<?php endif;?>
+
+<?php $read_more = theme_get_setting('read_more');
+          $r_check = theme_get_setting('r_checkbox');
+?>
+<?php if($r_check == 1):?>
+                       <a href="<?php print $read_more;?>" class="color_light">Read More <i class="fa fa-angle-right m_left_5"></i></a>
+<?php endif;?>

@@ -1,0 +1,40 @@
+<!-- 
+- Block Title: <none>
+- Block description: Top Bar Header 4
+- Region setting: Top Bar Header 4
+- Text format: PHP code
+- Show block on specific pages: All pages except those listed
+
+-->
+
+<?php global $base_url, $user; ?>
+<div class="col-lg-4 col-md-4 col-sm-4 t_xs_align_c">
+                    <p class="f_size_small">
+                <?php if ($user->uid) : ?>
+                    Welcome <?php echo $user->name; ?>!
+                <?php else :?>
+Welcome visitor!
+                <?php endif; ?>
+
+</p>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 t_align_c t_xs_align_c">
+                    <p class="f_size_medium color_light">Promo message will be shown here!</p>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 t_align_r t_xs_align_c">
+                    <p class="f_size_small">Call us toll free: <b class="color_light">(123) 456-7890</b></p>
+                </div>
+<div class="popup_wrap d_none" id="login_popup">
+	<section class="popup r_corners shadow">
+		<button class="bg_tr color_dark tr_all_hover text_cs_hover close f_size_large"><i class="fa fa-times"></i></button>
+		<h3 class="m_bottom_20 color_dark">Log In</h3>
+		<?php
+			$block['content'] = drupal_get_form('user_login_block');
+			print render($block['content']);
+		?>
+		<div class="bg_light_color_1 t_mxs_align_c">
+			<h3 class="color_dark d_inline_middle d_mxs_block m_mxs_bottom_15">New Customer?</h3>
+				<a href="<?php echo $base_url; ?>/user/register" role="button" class="tr_all_hover r_corners button_type_4 bg_dark_color bg_cs_hover color_light d_inline_middle m_mxs_left_0">Create an Account</a>
+		</div>
+	</section>
+</div>

@@ -1,0 +1,55 @@
+#wrapper {
+  margin: 0 2% 0 22%;
+  width: 76%;
+}
+a{color:#369}
+body{font-size:16px;line-height:24px;font-family:Tahoma,sans-serif;margin:0;padding:0}
+article{max-width:944px;margin:auto}
+h1{font-size:80px;line-height:80px;margin-top:24px;margin-bottom:48px}
+h2{font-size:42px;line-height:48px;margin-top:36px;margin-bottom:24px}
+h3{font-size:26px;line-height:48px;margin-top:24px;margin-bottom:0}
+h4{font-size: 22px; line-height:48px;margin-top:24px; margin-bottom:12px;}
+h1,h2,h3,#toc a{font-family:'Voces',sans-serif}
+p,ul{margin-top:0;margin-bottom:24px}
+small,aside{font-size:10px}
+code{word-wrap:break-word}
+img {max-width: 100%;}
+.repo-stats iframe{float:right;margin-left:5px}
+#toc{top:0;left:0;height:100%;position:fixed;background:#E6EDF2;width:20%;padding-top:0px;color:#2D333D; overflow-y: scroll;}
+#toc ul{margin:0;padding:0;list-style:none}
+#toc li{padding:5px 10px}
+#toc a{color:#2D333D;text-decoration:none;display:block}
+#toc .toc-h2 {font-size: 18px;font-weight: bold;padding-left: 10px;}
+#toc .toc-h3{padding-left:20px}
+#toc .toc-active{background:none repeat scroll 0 0 #0FA1D5;}
+#toc .toc-active a{color: #FFF;}
+pre{display:block;padding:.5em;background:#333;color:#f8f8f8; word-wrap: break-word; font-size: 14px;}
+pre .shebang,pre .comment,pre .template_comment,pre .javadoc{color:#7c7c7c}pre .keyword,pre .tag,pre .ruby .function .keyword,pre .tex .command{color:#96cbfe}pre .function .keyword,pre .sub .keyword,pre .method,pre .list .title{color:#ffffb6}pre .string,pre .tag .value,pre .cdata,pre .filter .argument,pre .attr_selector,pre .apache .cbracket,pre .date{color:#a8ff60}pre .subst{color:#daefa3}
+pre .regexp{color:#e9c062}
+pre .function .title,pre .sub .identifier,pre .pi,pre .decorator,pre .ini .title,pre .tex .special{color:#ffffb6}pre .class .title,pre .haskell .label,pre .constant,pre .smalltalk .class,pre .javadoctag,pre .yardoctag,pre .phpdoc,pre .nginx .built_in{color:#ffffb6}pre .symbol,pre .ruby .symbol .string,pre .ruby .symbol .keyword,pre .ruby .symbol .keymethods,pre .number,pre .variable,pre .vbscript,pre .literal{color:#c6c5fe}
+pre .css .tag{color:#96cbfe}pre .css .rules .property,pre .css .id{color:#ffffb6}
+pre .css .class{color:#FFF}
+pre .hexcolor{color:#c6c5fe}
+pre .number{color:#ff73fd}
+pre .tex .formula{opacity:.7}
+
+.question{
+	/*background: url('images/plus.png') 0 50% no-repeat;*/
+	border: 1px solid #333;
+	padding: 15px;
+	margin-bottom: 5px;
+}
+.question.active{
+	/*background: url('images/minus.png') 0 50% no-repeat;*/
+}
+.question:hover{
+	cursor: pointer;
+}
+.answer{
+	border: 1px solid #333;
+	display: none;
+	padding: 15px;
+}
+.question p, .answer p{
+	margin: 0;
+}
